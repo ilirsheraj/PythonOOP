@@ -35,10 +35,27 @@ class MercedezBenz:
 
 
 # When creating instances, we will now have to specify the color
-# print(MercedezBenz())  # Gives error because we did not specify any color
-# If we defined color as default `def __init__(self, color = "black")` we can call the above statement
-
 m1 = MercedezBenz("black")
 m2 = MercedezBenz("blue")
 print(m1.color)
 print(m2.color)
+
+
+# print(MercedezBenz())  # Gives error because we did not specify any color
+# If we defined color as default `def __init__(self, color = "black")` we can call the above statement
+class MercedezBenz:
+	doors = 4
+	wheels = 4
+	model = "G"
+
+	def __init__(self, color="Black"):  # after instance creation, but before it is returned
+		self.color = color
+
+	def drive(self):
+		return f"A Mercedes is driving. And it is {self}\n"
+
+
+m3 = MercedezBenz()
+print(MercedezBenz())
+print(m3.color)
+print(MercedezBenz().color)
