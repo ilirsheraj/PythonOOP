@@ -11,8 +11,8 @@ class Student:
 	def greet(self):
 		_greetings = [
 			"Hi, I'm {}",
-			"Hey there, my name is",
-			"Hi. Oh, my name is {}"
+			"Hey there, my name is {}",
+			"Hi. Oh, my name is {}",
 		]
 		greeting = choice(_greetings)
 		return greeting.format(self.name)
