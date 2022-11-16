@@ -25,3 +25,7 @@ print(type(MercedesBenz.__dict__))
 m1 = MercedesBenz("lavender")
 m1.__dict__["horse_power"] = 290
 print(m1.__dict__)
+
+# get attribute by name of "__dict__". Python goes looking for it in the namespace, then the class
+# It finds it in the class. The attribute name (__dict__) points to a descriptor
+# the descriptors get() is called which returns a dictionary
