@@ -30,3 +30,17 @@ print(hash(b))
 # A better way is to take into consideration all instance attributes, we create a tuple. check code
 print(hash(b) == hash(b2))
 print(hash(b) == hash(b1))
+
+# More on hash: change the input in the instance, hash will change
+# This introduces some undesirable side effects
+b.author = "Like"
+print(hash(b))
+
+d = {}
+d[b] = "value"
+print(b in d)
+
+# hash will change again: we cannot guarantee the first condition of hashing
+b.title = "untitled"
+print(hash(b))
+print(b in d)
