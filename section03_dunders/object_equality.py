@@ -40,12 +40,20 @@ class Book:
 			return False
 		return self.title == other.title and self.author == other.author
 
+	def __ne__(self, other):
+		# Comparing non-equality
+		print("comparing non-equality...")
+		if not isinstance(other, Book):
+			return False
+		return self.title != other.title and self.author != other.author
+
 
 b = Book("Antifragile", "Nassim Taleb", "Hardcover", 519)
 b1 = Book("Antifragile", "Nassim Taleb", "Hardcover", 519)  # True
 b2 = Book("Antifragile", "Nassim Taleb II", "Hardcover", 519)  # False
 print(b == b1)  # True
 print(b == b2)  # False
+print(b != b1)  # False: here we compare non-equality
 
 # Create a new instance from namedtuples
 essay = namedtuple("essay", ["title", "author"])
