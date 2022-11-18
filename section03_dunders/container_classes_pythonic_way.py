@@ -89,7 +89,14 @@ print(shelf + b3)
 print(b3 + shelf)
 # inplace add is defined by __iadd__ but when not available, __radd__ does the job
 # shelf += b4  # in console only, it is supported because of __add__ and __radd__
-print(bs)
 
 # shelf did not change
+print(shelf)
+
+# Another way to do the same easily
+shelf = BookShelf(capacity=10)
+
+for b in [b1, b2, b3, b4]:
+	shelf += b
+
 print(shelf)
