@@ -24,14 +24,14 @@ class Contact:
 		if self.display_mode == "masked":
 			return f"Contact(name='{self._obfuscate(self.name)}', last_name='{self._obfuscate(self.last_name)}')"
 
-		return f"Contact(name='{self.name}', last_name='{self.last_name}', phone='{self.phone}', email='{self.email}'"
+		return f"Contact(name='{self.name}', last_name='{self.last_name}', phone='{self.phone}', email='{self.email}')"
 
 	def __str__(self):
 		return f"{self.last_name[0]}{self.name[0]}"
 
 	def __format__(self, format_spec):
 		if format_spec != "masked":
-			return f"Contact(name='{self.name}', last_name='{self.last_name}', phone='{self.phone}', email='{self.email}'"
+			return f"Contact(name='{self.name}', last_name='{self.last_name}', phone='{self.phone}', email='{self.email}')"
 
 		return repr(self)
 
