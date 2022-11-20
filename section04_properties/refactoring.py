@@ -41,8 +41,9 @@ class Customers:
 
 # Customers("Ilir")  # invalid
 c = Customers("bronze")
-c.loyalty = "Ilir"
+c._loyalty = "Ilir"
 # Since we made it private, it will not change
 print(c.get_loyalty())
 
 print(c.__dict__)
+# {'_loyalty': 'Ilir'}
