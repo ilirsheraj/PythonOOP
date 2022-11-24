@@ -56,3 +56,5 @@ print(d1.membership)
 # We can also add here using +=
 d1.membership += 1
 print(d1.membership)
+
+print(c1.__dict__)
