@@ -10,6 +10,9 @@ class Employee(object):
 		self.status = status
 		self.salary = salary
 
+	@property
+	def high_salary(self):
+		return self.salary > 40000
 
 e1 = Employee("Ilir", "Sheraj", 33, "FT", 50000)
 print(e1.name, e1.status)
@@ -18,3 +21,5 @@ print(e1.name, e1.status)
 # Not possible to extend anymore
 # e1.pension = "DB"
 # print(e1.pension)
+
+print(Employee.__dict__)
