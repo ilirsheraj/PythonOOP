@@ -25,3 +25,21 @@ print(ev4)
 EV5 = namedtuple("ElectricVehicle", "range make price", defaults=(100, "Tesla", 49000))
 ev5 = EV5()
 print(ev5)
+
+# As tuples they are immutable
+print(ev5.range)
+# ev5,range = 54  # will not work
+
+ev6 = EV([200, 300], "chevy", 49000)
+print(ev6.range)  # reference type
+print(id(ev6.range))
+
+# We can change the list inside the tuple
+ev6.range[0] = 250
+print(ev6.range)
+print(id(ev6.range))
+
+# For more immutability
+ev7 = EV((200, 300), "chevy", 49000)
+
+# ev7.range[0] = 250  # impossible
