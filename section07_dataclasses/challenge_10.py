@@ -3,6 +3,8 @@ from functools import total_ordering
 from typing import List
 
 
+# You will not allow any changes to default values
+# Set some of them with default values
 @dataclass(frozen=True)
 class Stock:
 	ticker: str
@@ -20,13 +22,15 @@ class Stock:
 class Position:
 	stock: Stock
 	shares: int
-
+		
+	# less than
 	def __lt__(self, other):
 		if type(other) != Position:
 			raise TypeError("Can only compare instances of Position")
 
 		return self.stock.price * self.shares < other.stock.price * other.shares
-
+	
+	# equality
 	def __eq__(self, other):
 		if type(other) != Position:
 			raise TypeError("Can only compare instances of Position")
@@ -50,6 +54,7 @@ class Portfolio:
 		return round((total_dividends / self.value), 6)
 
 
+# Test the code
 MSFT = Stock("MSFT", 320, 0.62, 4)
 print(MSFT)
 LMT = Stock("LMT", 320, 3.2, 4)
