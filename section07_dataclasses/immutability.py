@@ -44,6 +44,7 @@ print(ev.__dict__)
 
 
 # To make fields immutable in dataclass is very easy using frozen
+# It is less code and less confusing
 @dataclass(order=True, frozen=True)
 class ElectricVehicle:
 	range: int = field(compare=True)
@@ -54,10 +55,10 @@ class ElectricVehicle:
 ev = ElectricVehicle(100, "BMW", 140000)
 print(ev)
 # data classes are immutable
-# ev.range = 200  # NOw its impossible to change
+# ev.range = 200  # Now its impossible to change
 # print(ev)
 
-# Since dataclass is immutable, it became hashable by default so we can use instances
+# Since dataclass is immutable, it became hashable by default, so now we can use instances
 # of this dataclass as dictionary keys
 
 bs = {
@@ -77,7 +78,7 @@ class ElectricVehicle:
 	make: str = field(default="Tesla", compare=False)
 	price: int = field(default=5600, repr=False, compare=False)
 
-
+# SInce range is not hashable, these two instances will point to the same hash value
 ev1 = ElectricVehicle(100, "BMW", 140000)
 ev2 = ElectricVehicle(120, "BMW", 140000)
 
