@@ -23,6 +23,7 @@ class TextField:
 
 
 class PersonTable:
+	# No need to specify the name of the descriptor, class variable takes care of it
 	first_name = TextField(200)
 	last_name = TextField(100)
 
