@@ -4,12 +4,13 @@
 
 # Think of protocols as a contract between our object and python
 # the descriptor protocol:
-# __get__()
-# __set__()
-# __delete__()
+# __get__()    -> retrieve something
+# __set__()    -> set something
+# __delete__() -> delete something
 
 
 class Descriptor:
+	# The names are official, can be changed but not recommended
 	def __get__(self, instance, owner):
 		pass
 
