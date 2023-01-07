@@ -6,6 +6,7 @@ class Child:
 
 
 print(Child.__dict__)
+# Rule 1: instance takes precedence
 
 # Redefine another name
 c = Child("Anthony")
@@ -20,6 +21,7 @@ class Child:
 		if name:
 			self.name = name
 
+# Rule 2: Now class variable will be recalled if no name defined
 
 c = Child("Anthony")
 print(c.name)
@@ -48,3 +50,6 @@ class Child(Parent):
 c = Child()
 # will inherit from next class in hierarchy
 print(c.name)
+
+# Rule 3: If not found in child class, python will look up the chain until object
+# if name does not exist in `object` class, then attribute error
