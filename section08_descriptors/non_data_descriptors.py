@@ -7,7 +7,6 @@ class TextField:
 		self.length = length
 
 	def __set_name__(self, owner, name):
-		print(owner)
 		self.name = name
 
 	def __get__(self, instance, owner):
@@ -43,6 +42,7 @@ class PersonTable:
 	last_name = TextField(100)
 	personal_no = LuckyNumber()
 
+	# Same name as descriptor, instance attribute
 	def __init__(self, personal_no):
 		self.personal_no = personal_no
 
