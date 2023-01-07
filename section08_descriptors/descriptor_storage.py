@@ -1,4 +1,4 @@
-from weakref import WeakKeyDictionary
+# from weakref import WeakKeyDictionary
 
 
 class TextField:
@@ -45,6 +45,7 @@ class TextField:
 
 	def __get__(self, instance, owner):
 		# return self.value
+		# get() will return NOne by default if the value is not found
 		return self._data.get(instance)
 
 
@@ -76,5 +77,10 @@ print(p2.first_name)
 print(id(p1))
 print(id(p2))
 
-# weakkey dictionary: different from hard references: check library above
+# Instance as key for dictionary assume sit is hashable
+# It also prevents garbage collectors form collecting it, affecting memory
+# This is called "memory leak" in computer science
 
+# weakkey dictionary: different from hard references: check library above
+# Data structure that improves on the problems mentioned above: will not prevent garbage collector
+# from getting rid of unused data
